@@ -1,0 +1,104 @@
+.home_container {
+	display: flex;
+	background: linear-gradient(rgb(185 203 246 / 90%), var(--sadcolor)), url(/img/Ancash2.jpg);
+    background-size: cover;
+	justify-content: center;
+	align-items: center;
+	transition: .3s ease all;
+}
+
+body.dark .home_container {
+	background: linear-gradient(rgb(185 203 246 / 90%), #242424), url(/img/Ancash2.jpg);
+	background-size: cover;
+}
+
+._home_container {
+	display: grid;
+    width: 90%;
+    height: 95vh;
+    align-items: center;
+	filter: brightness(0.75) rgb(0,78,89) !important;
+	grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1.7fr;
+}
+
+.home_left {
+	grid-column: 1;
+    grid-row: 1;
+	width: 100%;
+    max-width: none;
+    margin: 0;
+    text-align: initial;
+    align-items: flex-start;
+	z-index: 1;
+}
+
+.home_left h1 {
+	font-size: 270%;
+    font-weight: 600;
+    color: #fff;
+    font-family: inherit;
+    letter-spacing: .1rem;
+}
+
+.home_left p {
+	font-size: 150%;
+	color: #fff;
+	letter-spacing: .05rem;
+}
+
+.home_left a:hover {
+	color: rgb(0,78,89);
+}
+
+.home_right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 100%;
+	max-width: 970px;
+	margin: 0 auto;
+	grid-column: 2;
+    grid-row: 1;
+}
+
+.home_right img {
+	filter: brightness(0.75);
+	width: 100%;
+}
+@media (max-width:990px) {
+	._home_container {
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 0;
+		column-gap: 0 !important;
+	}
+
+	.home_left {
+		text-align: center;
+		padding: 0 1%;
+		grid-column: 1;
+		grid-row: 1;
+	}
+	
+	.home_left h1 {
+		font-size: 36px;
+	}
+
+	.home_right {
+		margin: 0 auto;
+		grid-column: 1;
+	}
+
+	.home_right img {
+		filter: brightness(0.5);
+	}
+}
+
+/* Agregar CSS para la transición suave */
+#slideshow {
+    opacity: 0.1;
+    transition: opacity 1s ease-in-out;
+}
+#slideshow.show {
+    opacity: 1;
+}
